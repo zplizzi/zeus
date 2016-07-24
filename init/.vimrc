@@ -1,4 +1,4 @@
-# Do system-specific things here
+" Do system-specific things here
 
-# Include the general .vimrc
+" Include the general .vimrc
 source ~/zeus/.vimrc
