@@ -2,4 +2,4 @@
 
 
 # Import my general .bashrc
-source ~/.bashrc
+source .bashrc
