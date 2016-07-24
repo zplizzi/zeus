@@ -1,1 +1,31 @@
+# My general .bashrc file. Only include things here that should work on all Unix-like systems.
 
+# activate my default virtual environment
+source ~/venv/2.7/bin/activate
+
+
+# Create a nice looking bash prompt
+
+# Colors
+RED='\[\033[31m\]'
+GREEN='\[\033[32m\]'
+YELLOW='\[\033[33m\]'
+BLUE='\[\033[34m\]'
+PURPLE='\[\033[35m\]'
+CYAN='\[\033[36m\]'
+WHITE='\[\033[37m\]'
+NIL='\[\033[00m\]'
+
+
+# Get Virtual Env
+if [[ $VIRTUAL_ENV != "" ]]
+    then
+      # Strip out the path and just leave the env name
+      venv="${YELLOW}(${VIRTUAL_ENV##*/})"
+else
+      # In case you don't have one activated
+      venv=''
+fi
+
+# Set bash prompt
+export PS1="${venv}${PURPLE} \w$ ${NIL}"
