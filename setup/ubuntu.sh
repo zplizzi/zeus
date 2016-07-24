@@ -18,19 +18,13 @@ mkdir -p $WORKON_HOME
 if [ ! -d $WORKON_HOME/3.4 ]; then
   mkvirtualenv -p python3.4 3.4
   workon 3.4
-  pip install \
-    ipython
-    jupyter
-    matplotlib
+  pip install -r requirements.txt
   deactivate
 fi
 if [ ! -d $WORKON_HOME/2.7 ]; then
   mkvirtualenv -p python2.7 2.7
   workon 2.7
-  pip install \
-    ipython
-    jupyter
-    matplotlib
+  pip install -r requirements.txt
   deactivate
 fi
 
