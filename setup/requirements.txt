@@ -1,0 +1,9 @@
+# Packages to install with pip into new virtual environments
+# Not specifying version numbers since I prefer having the most updated packages
+Django
+Flask
+ipython
+jupyter
+matplotlib
+numpy
+protobuf
