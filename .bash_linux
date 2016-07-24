@@ -1,0 +1,4 @@
+# Do any Linux-specific things here
+
+# Import my general .bashrc file
+import .bashrc
