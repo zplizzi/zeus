@@ -1,7 +1,10 @@
 # My general .bashrc file. Only include things here that should work on all Unix-like systems.
 
-# activate my default virtual environment
-source ~/venv/2.7/bin/activate
+# set up virtualenvwrapper path
+export WORKON_HOME=~/venv
+
+# activate virtual environment
+workon 3.4
 
 #### RANDOM FUNCTIONS #####
 # awesome!  CD AND LA. I never use 'cd' anymore...
