@@ -7,3 +7,5 @@ sudo apt-get install \
   
   
   
+# Run general setup file
+bash setup.sh
