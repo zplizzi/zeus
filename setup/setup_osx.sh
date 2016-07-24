@@ -5,10 +5,11 @@
 
 # Install packages
 brew install \
-  mosh
-  git
-  wget
+  mosh \
+  git \
+  wget \
+  python3
   
   
 # Run general setup file
-bash setup.sh
+bash ~/zeus/setup/setup.sh

@@ -10,16 +10,16 @@ source virtualenvwrapper.sh
 export WORKON_HOME=~/venv
 mkdir -p $WORKON_HOME
 # Only create if it doesn't exist
-if [ ! -d $WORKON_HOME/3.4 ]; then
-  mkvirtualenv -p python3.4 3.4
-  workon 3.4
-  pip install -r requirements.txt
+if [ ! -d $WORKON_HOME/3 ]; then
+  mkvirtualenv -p python3 3
+  workon 3
+  pip install -r ~/zeus/setup/requirements.txt
   deactivate
 fi
-if [ ! -d $WORKON_HOME/2.7 ]; then
-  mkvirtualenv -p python2.7 2.7
-  workon 2.7
-  pip install -r requirements.txt
+if [ ! -d $WORKON_HOME/2 ]; then
+  mkvirtualenv -p python2 2
+  workon 2
+  pip install -r ~/zeus/setup/requirements.txt
   deactivate
 fi
 

@@ -3,8 +3,10 @@
 # set up virtualenvwrapper path
 export WORKON_HOME=~/venv
 
+source virtualenvwrapper.sh
+
 # activate virtual environment
-workon 3.4
+workon 3
 
 #### RANDOM FUNCTIONS #####
 # awesome!  CD AND LA. I never use 'cd' anymore...
