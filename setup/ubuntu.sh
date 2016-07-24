@@ -3,6 +3,9 @@
 # Install packages
 sudo apt-get install \
   mosh
+  git
+  
+  
   
 # Install global pip packages
 pip install \
@@ -14,7 +17,22 @@ mkdir -p $WORKON_HOME
 # Only create if it doesn't exist
 if [ ! -d $WORKON_HOME/3.4 ]; then
   mkvirtualenv -p python3.4 3.4
+  workon 3.4
+  pip install \
+    ipython
+    jupyter
+    matplotlib
+  deactivate
 fi
 if [ ! -d $WORKON_HOME/2.7 ]; then
   mkvirtualenv -p python2.7 2.7
+  workon 2.7
+  pip install \
+    ipython
+    jupyter
+    matplotlib
+  deactivate
 fi
+
+# Set up my directory structure
+mkdir -p projects
