@@ -4,6 +4,8 @@
 pip install \
   virtualenvwrapper
 
+source virtualenvwrapper.sh
+
 # Set up virtual environment
 export WORKON_HOME=~/venv
 mkdir -p $WORKON_HOME
