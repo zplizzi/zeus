@@ -2,7 +2,8 @@
 
 # Install packages
 sudo apt-get install \
-
+  mosh
+  
 # Install global pip packages
 pip install \
   virtualenvwrapper
