@@ -1,5 +1,8 @@
 # Sets up an OSX system how I like it
 
+# Set to quit on errors
+set -e
+
 # Check for Homebrew,
 # Install if we don't have it
 if test ! $(which brew); then
