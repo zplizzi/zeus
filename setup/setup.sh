@@ -52,14 +52,12 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
-# Install vundle plugins
-vim +PluginInstall +qall
-
-# do this last because it'll quit the script and start zsh
-echo "installing oh my zsh." 
-export SHELL=zsh
-set +e
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if [ ! -d ~/.oh-my-zsh ]; then
+	echo "installing oh my zsh";
+	git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh;
+else
+	echo "oh my zsh is already installed";
+fi
 
 read -p "Would you like to put dotfile links to ~/zeus in your home directory (y/n)? " yn
 case $yn in
@@ -67,5 +65,8 @@ case $yn in
   [Nn]* ) ;;
   * ) echo "Please answer y or n.";;
 esac
+
+# Install vundle plugins
+vim +PluginInstall +qall
 
 echo "Setup finished. Run 'zsh' to enter the zsh prompt"
