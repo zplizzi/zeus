@@ -1,0 +1,9 @@
+[user]
+  name = Zachary Polizzi
+  email = zpolizzi@gmail.com
+	github = zpolizzi
+[credential]
+	helper = store
+[core]
+	editor = vim
+	
