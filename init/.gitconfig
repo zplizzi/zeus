@@ -1,9 +1,11 @@
 [user]
-  name = Zachary Polizzi
-  email = zpolizzi@gmail.com
-	github = zpolizzi
+  name = Zack Polizzi
+  email = zplizzi@gmail.com
+	github = zplizzi
 [credential]
 	helper = store
 [core]
 	editor = vim
 	
+[push]
+	default = simple
