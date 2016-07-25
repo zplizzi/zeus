@@ -1,4 +1,4 @@
 # Do system-specific things here
 
 # Import generic .zshrc
-# source ~/zeus/.zshrc
+source ~/zeus/.zshrc
