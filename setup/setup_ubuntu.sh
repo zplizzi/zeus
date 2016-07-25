@@ -5,9 +5,9 @@ set -e
 
 # Install packages
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get -y upgrade
 # build-essential, python-dev, libpng-dev, libfreetype6-dev required for matplotlib
-sudo apt-get install \
+sudo apt-get -y install \
   zsh \
   mosh \
   git \
@@ -22,4 +22,4 @@ sudo apt-get install \
   htop
   
 # Run general setup file
-bash setup.sh
+bash ~/zeus/setup/setup.sh

@@ -35,13 +35,6 @@ fi
 # Set up my directory structure
 mkdir -p ~/projects
 
-read -p "Would you like to put dotfile links to ~/zeus in your home directory? " yn
-case $yn in
-  [Yy]* ) cp -r ~/zeus/init/. ~;;
-  [Nn]* ) ;;
-  * ) echo "Please answer yes or no.";;
-esac
-
 
 # Use zsh as your shell
 # Put the path in /etc/shells otherwise it'll complain about "nonstandard path"
@@ -65,4 +58,14 @@ vim +PluginInstall +qall
 # do this last because it'll quit the script and start zsh
 echo "installing oh my zsh." 
 export SHELL=zsh
+set +e
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+read -p "Would you like to put dotfile links to ~/zeus in your home directory? " yn
+case $yn in
+  [Yy]* ) cp -r ~/zeus/init/. ~;;
+  [Nn]* ) ;;
+  * ) echo "Please answer yes or no.";;
+esac
+
+
