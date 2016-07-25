@@ -51,7 +51,7 @@ if ! grep -q zsh /etc/shells; then
 fi
 
 echo "setting ZSH as shell"
-sudo chsh -s $(which zsh)
+sudo chsh -s $(which zsh) $USER
 
 # install vundle
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
@@ -59,6 +59,10 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
+# Install vundle plugins
+vim +PluginInstall +qall
+
 # do this last because it'll quit the script and start zsh
-echo "installing oh my zsh"
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "installing oh my zsh." 
+export SHELL=zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
