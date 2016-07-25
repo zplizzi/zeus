@@ -25,3 +25,6 @@ fi
 
 # Set up my directory structure
 mkdir -p projects
+
+# Save git password (in plaintext in ~/.git-credentials)
+git config --global credential.helper store
