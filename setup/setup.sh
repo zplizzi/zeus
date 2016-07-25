@@ -67,6 +67,7 @@ case $yn in
 esac
 
 # Install vundle plugins
+echo "Installing vim plugins. Will throw an error, don't be alarmed, just hit ENTER."
 vim +PluginInstall +qall
 
 echo "Setup finished. Run 'zsh' to enter the zsh prompt"
