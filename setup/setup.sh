@@ -26,5 +26,19 @@ fi
 # Set up my directory structure
 mkdir -p projects
 
-# Save git password (in plaintext in ~/.git-credentials)
-git config --global credential.helper store
+
+echo "copying init dotfiles into your home directory"
+cp ~/zeus/init/* ~/
+
+
+# Use zsh as your shell
+# Put the path in /etc/shells otherwise it'll complain about "nonstandard path"
+if ! grep -q zsh /etc/shells; then
+	sudo echo $(which zsh) >> /etc/shells
+fi
+
+echo "setting ZSH as shell"
+chsh -s $(which zsh)
+
+
+

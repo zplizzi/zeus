@@ -45,6 +45,14 @@ colorscheme solarized
 " Show line numbers
 set number
 
+" make a column at 81, 101 chars wide
+set colorcolumn=81,101 
+
+set confirm " confim instead of error when leaving unsaved file
+set mouse=a " Enable use of the mouse for all modes
+
+inoremap jk <esc> " jk is escape
+
 " Allow hidden buffers, don't limit to 1 file per window/split
 set hidden
 
@@ -60,3 +68,5 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Stop auto-commenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o

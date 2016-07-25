@@ -86,3 +86,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias yolo="git commit -am '`curl -s http://whatthecommit.com/index.txt`'"
+alias yoloo="git commit -am '`curl -s http://whatthecommit.com/index.txt`' && git push origin master"
+
+export EDITOR="vim";
+
+# 10 second wait if you do something that will delete everything.  I wish I'd had this before...
+setopt RM_STAR_WAIT
+
+
