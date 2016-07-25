@@ -7,4 +7,5 @@ jupyter
 # matplotlib is super slow to install 
 # matplotlib
 numpy
+virtualenvwrapper
 protobuf
