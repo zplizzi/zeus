@@ -61,11 +61,11 @@ export SHELL=zsh
 set +e
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-read -p "Would you like to put dotfile links to ~/zeus in your home directory? " yn
+read -p "Would you like to put dotfile links to ~/zeus in your home directory (y/n)? " yn
 case $yn in
   [Yy]* ) cp -r ~/zeus/init/. ~;;
   [Nn]* ) ;;
-  * ) echo "Please answer yes or no.";;
+  * ) echo "Please answer y or n.";;
 esac
 
-
+echo "Setup finished. Run 'zsh' to enter the zsh prompt"
