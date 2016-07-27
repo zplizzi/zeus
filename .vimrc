@@ -14,11 +14,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'xolox/vim-misc'
+" (was for vim-session) Plugin 'xolox/vim-misc'
+Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin indent on    " required, sets smart file-specific indenting settings.
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -34,6 +36,11 @@ filetype plugin indent on    " required
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
+
+set autoindent		    " not sure if this does anything, but causes next line to be indented same as previous
+
+" For c/cpp files, sets to use tabs instead of spaces, and width of 2. 
+autocmd FileType c,cpp setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 " Switch syntax highlighting on
 syntax on
@@ -70,3 +77,69 @@ nnoremap <C-H> <C-W><C-H>
 
 " Stop auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Ag root is cwd (set with NERDTree) 
+let g:ag_working_path_mode="c"
+
+" Start NERDTree by default
+autocmd VimEnter * NERDTree
+let NERDTreeShowBookmarks=1
+
+" CtrlP uses desired directory as root
+" Remap normal ctrlp behaviour to something else
+let g:ctrlp_map = '<c-a>'
+" Now map it back to what we really want
+noremap <C-p> :CtrlP ~/fb/connectivity-lab/hapilink_o<CR>
+
+" Don't open files by default in Ag. also, caps are annoying
+ca ag Ag!
+
+" shortcuts
+ca vimrc :e ~/zeus/.vimrc
+ca zshrc :e ~/zeus/.zshrc
+
+" Save cache on exit
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_use_caching = 1
+
+" Search by filename (not full path) by default
+let g:ctrlp_by_filename = 1
+
+" Dont' include hidden files (dotfiles) :
+let g:ctrlp_show_hidden = 0
+
+" Increase max search 
+let g:ctrlp_max_files=0 
+let g:ctrlp_max_depth=40
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" Highlight all instances of word under cursor, when idle.
+" Useful when studying strange source code.
+" Type z/ to toggle highlighting on/off.
+nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+function! AutoHighlightToggle()
+   let @/ = ''
+   if exists('#auto_highlight')
+     au! auto_highlight
+     augroup! auto_highlight
+     setl updatetime=0
+     echo 'Highlight current word: off'
+     return 0
+  else
+    augroup auto_highlight
+    au!
+    au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+    augroup end
+    setl updatetime=0
+    echo 'Highlight current word: ON'
+  return 1
+ endif
+endfunction

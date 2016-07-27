@@ -98,4 +98,4 @@ setopt RM_STAR_WAIT
 # activate virtual environment
 source virtualenvwrapper.sh
 export WORKON_HOME=~/venv
-workon 3
+workon 2 
