@@ -121,10 +121,20 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+" Try to get clipboard connected to sys clipboard
+set clipboard=unnamed
+
+
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.
 " Type z/ to toggle highlighting on/off.
 nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+"nnoremap z/ :call Do_z()<CR> 
+function! Do_z()
+	if AutoHighlightToggle()
+		set hls
+	endif
+endfunction
 function! AutoHighlightToggle()
    let @/ = ''
    if exists('#auto_highlight')
@@ -143,3 +153,17 @@ function! AutoHighlightToggle()
   return 1
  endif
 endfunction
+
+"call AutoHighlightToggle()
+"set hlsearch
+"autocmd BufEnter * :call Do_z()
+"autocmd BufEnter * setlocal hls
+augroup auto_highlight
+au!
+au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+augroup end
+setl updatetime=0
+
+
+autocmd InsertEnter * :setlocal nohlsearch
+autocmd InsertLeave * :setlocal hlsearch
