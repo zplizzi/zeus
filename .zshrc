@@ -99,3 +99,7 @@ setopt RM_STAR_WAIT
 source virtualenvwrapper.sh
 export WORKON_HOME=~/venv
 workon 2 
+
+
+# Don't share history between different instances
+unsetopt share_history
