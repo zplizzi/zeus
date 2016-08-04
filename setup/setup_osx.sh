@@ -90,5 +90,10 @@ killall Finder
 
 echo "Done!"
   
-# Run general setup file
+# Run general setup files
+
+bash ~/zeus/setup/setup_vim.sh
+bash ~/zeus/setup/setup_zsh.sh
+bash ~/zeus/setup/setup_venv.sh
+
 bash ~/zeus/setup/setup.sh
