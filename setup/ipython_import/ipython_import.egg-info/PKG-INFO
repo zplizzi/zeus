@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: ipython-import
+Version: 0.1
+Summary: Allows ipython notebooks to be imported in other notebooks
+Home-page: none
+Author: Zack Polizzi
+Author-email: email
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
