@@ -1,0 +1,7 @@
+setup.py
+ipython_import/__init__.py
+ipython_import.egg-info/PKG-INFO
+ipython_import.egg-info/SOURCES.txt
+ipython_import.egg-info/dependency_links.txt
+ipython_import.egg-info/not-zip-safe
+ipython_import.egg-info/top_level.txt
