@@ -17,6 +17,7 @@ Plugin 'altercation/vim-colors-solarized'
 " (was for vim-session) Plugin 'xolox/vim-misc'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
+Plugin 'hynek/vim-python-pep8-indent'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -37,7 +38,7 @@ filetype plugin indent on    " required, sets smart file-specific indenting sett
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
-set autoindent		    " not sure if this does anything, but causes next line to be indented same as previous
+ret autoindent		    " not sure if this does anything, but causes next line to be indented same as previous
 
 " For c/cpp files, sets to use tabs instead of spaces, and width of 2. 
 autocmd FileType c,cpp setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
@@ -122,47 +123,47 @@ if executable('ag')
 endif
 
 " Try to get clipboard connected to sys clipboard
-set clipboard=unnamed
+"set clipboard=unnamed
 
 
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.
 " Type z/ to toggle highlighting on/off.
-nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+" nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 "nnoremap z/ :call Do_z()<CR> 
-function! Do_z()
-	if AutoHighlightToggle()
-		set hls
-	endif
-endfunction
-function! AutoHighlightToggle()
-   let @/ = ''
-   if exists('#auto_highlight')
-     au! auto_highlight
-     augroup! auto_highlight
-     setl updatetime=0
-     echo 'Highlight current word: off'
-     return 0
-  else
-    augroup auto_highlight
-    au!
-    au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
-    augroup end
-    setl updatetime=0
-    echo 'Highlight current word: ON'
-  return 1
- endif
-endfunction
+"function! Do_z()
+"	if AutoHighlightToggle()
+"		set hls
+"	endif
+"endfunction
+"function! AutoHighlightToggle()
+"   let @/ = ''
+"   if exists('#auto_highlight')
+"     au! auto_highlight
+"     augroup! auto_highlight
+"     setl updatetime=0
+"     echo 'Highlight current word: off'
+"r     return 0
+"  else
+"    augroup auto_highlight
+"    au!
+"    au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+"    augroup end
+"    setl updatetime=0
+"    echo 'Highlight current word: ON'
+"  return 1
+" endif
+"endfunction
 
 "call AutoHighlightToggle()
 "set hlsearch
 "autocmd BufEnter * :call Do_z()
 "autocmd BufEnter * setlocal hls
-augroup auto_highlight
-au!
-au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
-augroup end
-setl updatetime=0
+"augroup auto_highlight
+"au!
+"au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+"augroup end
+"setl updatetime=0
 
 
 autocmd InsertEnter * :setlocal nohlsearch
