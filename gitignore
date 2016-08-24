@@ -1,5 +1,7 @@
-# Add custom stuff here
+# Project specific ignores
 
+
+# Other generally useful ignores
 *.seq
 *.db
 
