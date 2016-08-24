@@ -1,3 +1,5 @@
+# Deactivate virtual environment if one is active
+deactivate
 
 # Set to quit on errors
 set -e
