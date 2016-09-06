@@ -1,0 +1,7 @@
+Setting up a SSH reverse tunnel allows you to SSH to a machine (the server) behind a firewall. You'll need a second machine (the middle machine) that you can SSH to, which has a static IP. 
+
+For this middle machine, I'm currently using an AWS instance. It might be possible to not use a middle machine if the client has a static IP, allocated using something like no-ip.com. Since this won't be highly available, you'll need to wait until the server re-tries a connection before you can access the server just after the client (and now middleman) becomes available.
+
+In general, you'll need to have a service on the server machine that opens a SSH connection to the middleman. Using Ubuntu 16.04, this is systemd. A systemd file is located in this folder. 
+
+To connect to the server from the client, you'll first SSH to the middleman, then run another command to get into the server. There's a way to do this all in one command, but I haven't tried it yet. 
