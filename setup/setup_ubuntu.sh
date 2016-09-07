@@ -19,7 +19,8 @@ sudo apt-get -y install \
   libpng-dev \
   libfreetype6-dev \
   libxft-dev \
-  htop
+  htop \
+  iftop
   
 # Run general setup files 
 bash ~/zeus/setup/setup_vim.sh
