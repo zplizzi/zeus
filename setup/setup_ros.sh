@@ -10,7 +10,7 @@ sudo apt-get update
 # Install everything kinetic
 # WILL ONLY WORK ON 16.04 (and a few others)
 echo "Installing ROS kinetic. Will likely fail if you're not on 16.04 or similar"
-sudo apt-get install ros-kinetic-desktop-full
+sudo apt-get install ros-kinetic-desktop-full python-rosinstall
 
 # Update rosdep
 sudo rosdep init
