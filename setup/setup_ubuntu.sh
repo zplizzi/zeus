@@ -20,7 +20,8 @@ sudo apt-get -y install \
   libfreetype6-dev \
   libxft-dev \
   htop \
-  iftop
+  iftop \
+  screen
   
 ## Remap CAPS key to CTRL
 # Should take effect immediately
