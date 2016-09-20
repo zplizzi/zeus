@@ -1,0 +1,3 @@
+[submodule "zeus-private"]
+	path = zeus-private
+	url = https://github.com/zplizzi/zeus-private.git
