@@ -19,8 +19,22 @@ sudo apt-get -y install \
   libpng-dev \
   libfreetype6-dev \
   libxft-dev \
-  htop
+  htop \
+  iftop \
+  screen
   
+## Remap CAPS key to CTRL
+# Should take effect immediately
+# TODO: debug this line
+if sudo grep -q XKBOPTIONS "/etc/default/keyboard"; then
+	echo "Appears that CAPS key is already mapped, skipping."
+else
+	echo "XKBOPTIONS=\"ctrl:nocaps\"" | sudo tee -a /etc/default/keyboard
+	setxkbmap -option ctrl:nocaps
+	echo "Mapped CAPS to CTRL"
+fi
+
+
 # Run general setup files 
 bash ~/zeus/setup/setup_vim.sh
 bash ~/zeus/setup/setup_zsh.sh

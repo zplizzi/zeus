@@ -1,0 +1,7 @@
+Only for Linux.
+
+Install by running setup.sh. Will download to ~, and install in a .folder.
+Will ask to link to your account. 
+You'll need to stop with Ctrl-C after configuring.
+
+Configure (start, stop, autostart) with configure.py.
