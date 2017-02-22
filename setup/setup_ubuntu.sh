@@ -3,6 +3,9 @@
 # Set to quit on errors
 set -e
 
+# Get rid of extraneous directories
+rm -rf Documents/ Music/ Pictures/ Public/ Templates/ Videos/
+
 # Install packages
 sudo apt-get update
 sudo apt-get -y upgrade
@@ -21,12 +24,14 @@ sudo apt-get -y install \
   libxft-dev \
   htop \
   iftop \
-  screen
+  screen \
+  vim \
+  silversearcher-ag
   
 ## Remap CAPS key to CTRL
 # Should take effect immediately
 # TODO: debug this line
-if sudo grep -q XKBOPTIONS "/etc/default/keyboard"; then
+if sudo grep -q ctrl:nocaps "/etc/default/keyboard"; then
 	echo "Appears that CAPS key is already mapped, skipping."
 else
 	echo "XKBOPTIONS=\"ctrl:nocaps\"" | sudo tee -a /etc/default/keyboard
