@@ -7,6 +7,7 @@ set -e
 mkdir -p ~/projects
 
 read -p "Would you like to put dotfile links to ~/zeus in your home directory (y/n)? " yn
+echo "you said :" $yn
 case $yn in
   [Yy]* ) cp -r ~/zeus/init/. ~;;
   [Nn]* ) ;;
