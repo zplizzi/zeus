@@ -43,6 +43,8 @@ ret autoindent		    " not sure if this does anything, but causes next line to be
 " For c/cpp files, sets to use tabs instead of spaces, and width of 2. 
 autocmd FileType c,cpp setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
+autocmd Filetype javascript setlocal expandtab ts=4 sts=4 sw=4
+
 " Switch syntax highlighting on
 syntax on
 
