@@ -18,6 +18,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,6 +49,7 @@ autocmd Filetype javascript setlocal expandtab ts=4 sts=4 sw=4
 
 " Automatically wrap text on Markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
+autocmd Filetype markdown setlocal expandtab ts=4 sts=4 sw=4
 
 " Switch syntax highlighting on
 syntax on
@@ -129,47 +132,6 @@ endif
 
 " Try to get clipboard connected to sys clipboard
 "set clipboard=unnamed
-
-
-" Highlight all instances of word under cursor, when idle.
-" Useful when studying strange source code.
-" Type z/ to toggle highlighting on/off.
-" nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
-"nnoremap z/ :call Do_z()<CR> 
-"function! Do_z()
-"	if AutoHighlightToggle()
-"		set hls
-"	endif
-"endfunction
-"function! AutoHighlightToggle()
-"   let @/ = ''
-"   if exists('#auto_highlight')
-"     au! auto_highlight
-"     augroup! auto_highlight
-"     setl updatetime=0
-"     echo 'Highlight current word: off'
-"r     return 0
-"  else
-"    augroup auto_highlight
-"    au!
-"    au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
-"    augroup end
-"    setl updatetime=0
-"    echo 'Highlight current word: ON'
-"  return 1
-" endif
-"endfunction
-
-"call AutoHighlightToggle()
-"set hlsearch
-"autocmd BufEnter * :call Do_z()
-"autocmd BufEnter * setlocal hls
-"augroup auto_highlight
-"au!
-"au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
-"augroup end
-"setl updatetime=0
-
 
 autocmd InsertEnter * :setlocal nohlsearch
 autocmd InsertLeave * :setlocal hlsearch
