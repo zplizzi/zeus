@@ -45,6 +45,9 @@ autocmd FileType c,cpp setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 autocmd Filetype javascript setlocal expandtab ts=4 sts=4 sw=4
 
+" Automatically wrap text on Markdown files
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
 " Switch syntax highlighting on
 syntax on
 
