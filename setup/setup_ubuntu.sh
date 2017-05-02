@@ -34,9 +34,13 @@ sudo apt-get -y install \
 if sudo grep -q ctrl:nocaps "/etc/default/keyboard"; then
 	echo "Appears that CAPS key is already mapped, skipping."
 else
-	echo "XKBOPTIONS=\"ctrl:nocaps\"" | sudo tee -a /etc/default/keyboard
-	setxkbmap -option ctrl:nocaps
-	echo "Mapped CAPS to CTRL"
+	if hash setxkbmap 2>/dev/null; then
+		echo "XKBOPTIONS=\"ctrl:nocaps\"" | sudo tee -a /etc/default/keyboard
+		setxkbmap -option ctrl:nocaps
+		echo "Mapped CAPS to CTRL"
+	else
+		echo "setxkbmap not found: cannot set CAPS to CTRL"
+	fi
 fi
 
 
