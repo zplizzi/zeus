@@ -34,17 +34,9 @@ set backspace=indent,eol,start
 " not sure if this does anything, but causes next line to be indented same as previous
 ret autoindent		    
 
-
 " Set up color scheme
 set background=dark
 colorscheme solarized
-
-" Show line numbers
-set number
-
-" make a column at 81, 101 chars wide. Set color (else it's invisible awk)
-set colorcolumn=81,101 
-highlight ColorColumn ctermbg=8
 
 " confim instead of error when leaving unsaved file
 set confirm 
@@ -62,8 +54,9 @@ set history=400
 map <leader>rr :source ~/.vimrc<CR>
 
 " shortcuts to edit vimrc/zshrc
-ca vimrc :e ~/zeus/.vimrc
-ca zshrc :e ~/zeus/.zshrc
+" currently broken because replaces vimrc in paths with this command
+"ca vimrc :e ~/zeus/.vimrc
+"ca zshrc :e ~/zeus/.zshrc
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -83,49 +76,51 @@ let g:pencil#wrapModeDefault = 'soft'
 
 " function for switching to prose mode
 function! Prose()
+  " use pencil for soft line wrapping
   call pencil#init()
+  " add a bit of left padding
+  set foldcolumn=1
 endfunction
 
 " function for switching to code mode
+" Use tab_width spaces for an indent
 function! Code(tab_width)
 
-	" Expand tabs to spaces
-	setlocal expandtab
-	" The width of a tab character in spaces
-	setlocal tabstop=a:tab_width
-	" The with of an indent, in spaces
-	setlocal shiftwidth=a:tab_width
-	" Confusing. Set same as expandtab in most cases
-	setlocal softtabstop=a:tab_width
+  " Expand tabs to spaces
+  setlocal expandtab
+  " The width of a tab character in spaces
+  execute "set tabstop=".a:tab_width
+  " The with of an indent, in spaces
+  execute "setlocal shiftwidth=".a:tab_width
+  " Confusing. Set same as expandtab in most cases
+  execute "setlocal softtabstop=".a:tab_width
 
-	" Switch syntax highlighting on
-	syntax on
+  " Switch syntax highlighting on
+  syntax on
+
+  " Show line numbers
+  set number
+
+  " make a column at 81, 101 chars wide. Set color (else it's invisible awk)
+  set colorcolumn=81,101 
+  highlight ColorColumn ctermbg=8
+
 
 endfunction
 
 "" FILETYPE-SPECIFIC STUFF
 
 " C/CPP
-" For c/cpp files, sets to use tabs instead of spaces, and width of 2. 
-autocmd FileType c,cpp setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
-"autocmd FileType c,cpp call Code(4)
+autocmd FileType c,cpp call Code(2)
 
 " JAVASCRIPT
-autocmd Filetype javascript setlocal expandtab ts=4 sts=4 sw=4
+autocmd Filetype javascript call Code(2)
 
 " PYTHON
-autocmd BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-"    \ set textwidth=79 |
-    \ set expandtab |
-"    \ set autoindent |
-    \ set fileformat=unix |
+autocmd Filetype python call Code(4)
 
 " VIMRC
-autocmd FileType .vimrc call Code(2)
+autocmd FileType vim call Code(2)
 
 " MARKDOWN
-" Use pencil 
 autocmd FileType markdown,mkd call Prose()
