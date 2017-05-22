@@ -87,8 +87,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias yolo="git commit -am '`curl -s http://whatthecommit.com/index.txt`'"
-alias yoloo="git commit -am '`curl -s http://whatthecommit.com/index.txt`' && git push origin master"
+alias yolo="git commit -m 'no message specified'"
+alias yoloo="git commit -m 'no message specified' && git push origin master"
+alias yolooo="git add -A && git commit -m 'no message specified' && git push origin master"
 
 export EDITOR="vim";
 
