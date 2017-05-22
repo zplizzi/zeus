@@ -109,18 +109,30 @@ function! Code(tab_width)
 endfunction
 
 "" FILETYPE-SPECIFIC STUFF
+function! Filetypes()
+  if &filetype == "python"
+    call Code(4)
+  elseif &filetype == "markdown"
+    call Prose()
+  elseif &filetype == "nerdtree"
+  else
+    call Code(2)
+  endif
+endfunction
+
+autocmd FileType * call Filetypes()
 
 " C/CPP
-autocmd FileType c,cpp call Code(2)
+"autocmd FileType c,cpp call Code(2)
 
 " JAVASCRIPT
-autocmd Filetype javascript call Code(2)
+"autocmd Filetype javascript call Code(2)
 
 " PYTHON
-autocmd Filetype python call Code(4)
+"autocmd Filetype python call Code(4)
 
 " VIMRC
-autocmd FileType vim call Code(2)
+"autocmd FileType vim call Code(2)
 
 " MARKDOWN
-autocmd FileType markdown,mkd call Prose()
+"autocmd FileType markdown,mkd call Prose()
