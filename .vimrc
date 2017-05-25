@@ -17,6 +17,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'hynek/vim-python-pep8-indent'
 " Prose handling: soft-wrap, etc
 Plugin 'reedes/vim-pencil'
+" Github plugin
+Plugin 'tpope/vim-fugitive'
 
 " Cool plugins to think about adding 
 " powerline or vim-airline
@@ -32,7 +34,7 @@ filetype plugin indent on    " required, sets smart file-specific indenting sett
 set backspace=indent,eol,start
 
 " not sure if this does anything, but causes next line to be indented same as previous
-ret autoindent		    
+ret autoindent        
 
 " Set up color scheme
 set background=dark
