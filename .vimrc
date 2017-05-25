@@ -19,6 +19,7 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'reedes/vim-pencil'
 " Github plugin
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 
 " Cool plugins to think about adding 
 " powerline or vim-airline
