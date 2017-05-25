@@ -40,6 +40,9 @@ ret autoindent
 set background=dark
 colorscheme solarized
 
+" Use system clipboard
+set clipboard=unnamedplus
+
 " confim instead of error when leaving unsaved file
 set confirm 
 
