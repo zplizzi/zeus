@@ -25,7 +25,7 @@ sudo apt-get -y install \
   htop \
   iftop \
   screen \
-  vim \
+  vim-gtk \
   silversearcher-ag
   
 ## Remap CAPS key to CTRL
