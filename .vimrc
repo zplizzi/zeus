@@ -119,6 +119,8 @@ function! Filetypes()
     call Code(4)
   elseif &filetype == "markdown"
     call Prose()
+  elseif &filetype == "text"
+    call Prose()
   elseif &filetype == "nerdtree"
   else
     call Code(2)
