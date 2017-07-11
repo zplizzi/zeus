@@ -116,7 +116,7 @@ endfunction
 "" FILETYPE-SPECIFIC STUFF
 function! Filetypes()
   if &filetype == "python"
-    call Code(4)
+    call Code(2)
   elseif &filetype == "markdown"
     call Prose()
   elseif &filetype == "text"
@@ -127,19 +127,3 @@ function! Filetypes()
   endif
 endfunction
 
-autocmd FileType * call Filetypes()
-
-" C/CPP
-"autocmd FileType c,cpp call Code(2)
-
-" JAVASCRIPT
-"autocmd Filetype javascript call Code(2)
-
-" PYTHON
-"autocmd Filetype python call Code(4)
-
-" VIMRC
-"autocmd FileType vim call Code(2)
-
-" MARKDOWN
-"autocmd FileType markdown,mkd call Prose()
