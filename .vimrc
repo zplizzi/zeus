@@ -127,3 +127,4 @@ function! Filetypes()
   endif
 endfunction
 
+autocmd FileType * call Filetypes()
