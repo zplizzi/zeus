@@ -77,8 +77,21 @@ let NERDTreeShowBookmarks=1
 " Use soft-wrap by default with pencil
 let g:pencil#wrapModeDefault = 'soft'
 
+" Set tab width properly
+function! TabWidth(width)
+  " Expand tabs to spaces
+  setlocal expandtab
+  " The width of a tab character in spaces
+  execute "set tabstop=".a:width
+  " The with of an indent, in spaces
+  execute "setlocal shiftwidth=".a:width
+  " Confusing. Set same as expandtab in most cases
+  execute "setlocal softtabstop=".a:width
+endfunction
+
 " function for switching to prose mode
 function! Prose()
+  call TabWidth(4)
   " use pencil for soft line wrapping
   call pencil#init()
   " add a bit of left padding
@@ -89,14 +102,7 @@ endfunction
 " Use tab_width spaces for an indent
 function! Code(tab_width)
 
-  " Expand tabs to spaces
-  setlocal expandtab
-  " The width of a tab character in spaces
-  execute "set tabstop=".a:tab_width
-  " The with of an indent, in spaces
-  execute "setlocal shiftwidth=".a:tab_width
-  " Confusing. Set same as expandtab in most cases
-  execute "setlocal softtabstop=".a:tab_width
+  call TabWidth(a:tab_width)
 
   " Switch syntax highlighting on
   syntax on
