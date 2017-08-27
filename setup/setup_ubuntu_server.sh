@@ -3,8 +3,6 @@
 # Set to quit on errors
 set -e
 
-# Get rid of extraneous directories
-rm -rf Documents/ Music/ Pictures/ Public/ Templates/ Videos/
 
 # Install packages
 sudo apt-get update
@@ -28,21 +26,6 @@ sudo apt-get -y install \
   vim \
   silversearcher-ag
   
-## Remap CAPS key to CTRL
-# Should take effect immediately
-# TODO: debug this line
-if sudo grep -q ctrl:nocaps "/etc/default/keyboard"; then
-	echo "Appears that CAPS key is already mapped, skipping."
-else
-	if hash setxkbmap 2>/dev/null; then
-		echo "XKBOPTIONS=\"ctrl:nocaps\"" | sudo tee -a /etc/default/keyboard
-		setxkbmap -option ctrl:nocaps
-		echo "Mapped CAPS to CTRL"
-	else
-		echo "setxkbmap not found: cannot set CAPS to CTRL"
-	fi
-fi
-
 
 # Run general setup files 
 bash ~/zeus/setup/setup_vim.sh

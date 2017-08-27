@@ -25,7 +25,6 @@ Plugin 'tpope/vim-rhubarb'
 " powerline or vim-airline
 " ctrlp, ack/ag
 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required, sets smart file-specific indenting settings.
@@ -40,6 +39,9 @@ ret autoindent
 " Set up color scheme
 set background=dark
 colorscheme solarized
+
+" Use system clipboard
+set clipboard=unnamedplus
 
 " confim instead of error when leaving unsaved file
 set confirm 
@@ -120,8 +122,10 @@ endfunction
 "" FILETYPE-SPECIFIC STUFF
 function! Filetypes()
   if &filetype == "python"
-    call Code(4)
+    call Code(2)
   elseif &filetype == "markdown"
+    call Prose()
+  elseif &filetype == "text"
     call Prose()
   elseif &filetype == "nerdtree"
   else
@@ -130,18 +134,3 @@ function! Filetypes()
 endfunction
 
 autocmd FileType * call Filetypes()
-
-" C/CPP
-"autocmd FileType c,cpp call Code(2)
-
-" JAVASCRIPT
-"autocmd Filetype javascript call Code(2)
-
-" PYTHON
-"autocmd Filetype python call Code(4)
-
-" VIMRC
-"autocmd FileType vim call Code(2)
-
-" MARKDOWN
-"autocmd FileType markdown,mkd call Prose()
