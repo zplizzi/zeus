@@ -33,6 +33,9 @@ filetype plugin indent on    " required, sets smart file-specific indenting sett
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
+" Use jk for esc
+:imap jk <Esc>
+
 " not sure if this does anything, but causes next line to be indented same as previous
 ret autoindent        
 
