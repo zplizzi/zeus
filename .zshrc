@@ -87,6 +87,18 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Git aliases
+
+alias ga="git add"
+alias gaa="git add -A"
+alias gc="git commit"
+alias gca="git commit -a"
+alias gcam="git commit -am"
+alias gd="git diff"
+alias gs="git status"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+
 alias yolo="git commit -m 'no message specified'"
 alias yoloo="git commit -m 'no message specified' && git push origin master"
 alias yolooo="git add -A && git commit -m 'no message specified' && git push origin master"
