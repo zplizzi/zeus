@@ -20,6 +20,9 @@ sudo usermod -aG docker $USER
 # Docker compose
 pip install docker-compose
 
+# QEMU
+sudo apt install qemu
+
 
 
 echo "Success. You will need to log-out and log back in to use docker without sudo"
