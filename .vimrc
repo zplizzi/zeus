@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 "" User plugins
 " Show directory tree in left panel 
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Nice color scheme
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'hynek/vim-python-pep8-indent'
@@ -36,11 +37,14 @@ set backspace=indent,eol,start
 " Use jk for esc
 :imap jk <Esc>
 
+" Use comma as leader
+:let mapleader = ","
+
 " not sure if this does anything, but causes next line to be indented same as previous
 ret autoindent        
 
 " Set up color scheme
-set background=dark
+set background=light
 colorscheme solarized
 
 " Use system clipboard
@@ -77,7 +81,15 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Start NERDTree by default
 autocmd VimEnter * NERDTree
-let NERDTreeShowBookmarks=1
+"let NERDTreeShowBookmarks=1
+nnoremap <Leader>f :NERDTreeToggle<Enter>
+" It might be cool to have NERDTree open to the current file. Something like
+" this.
+"nnoremap <silent> <Leader>f :NERDTreeFind<CR>
+" Get rid of the `Press ? for help`
+let NERDTreeMinimalUI = 1
+" Hide after opening a file
+let NERDTreeQuitOnOpen = 1
 
 " Use soft-wrap by default with pencil
 let g:pencil#wrapModeDefault = 'soft'
@@ -137,3 +149,9 @@ function! Filetypes()
 endfunction
 
 autocmd FileType * call Filetypes()
+
+
+" TODO:
+" - Have nerdtree open to current file + become active pane by keystroke
+"     Will use less screen real estate!!
+" - follow this: https://medium.com/@victormours/a-better-nerdtree-setup-3d3921abc0b9
