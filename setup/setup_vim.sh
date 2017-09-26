@@ -4,9 +4,9 @@ set -e
 
 
 # install vundle
-if [ ! -d ~/.vim/plugin/Vundle.vim ]; then
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
   echo "installing vundle"
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/plugin/Vundle.vim
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
 
