@@ -20,6 +20,9 @@ sudo usermod -aG docker $USER
 # Docker compose
 pip install docker-compose
 
+# QEMU
+sudo apt install qemu
+
 
 # Gcloud
 export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"

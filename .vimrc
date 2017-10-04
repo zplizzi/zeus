@@ -10,7 +10,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 "" User plugins
-" Show directory tree in left panel 
+" Show directory tree in left panel
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Nice color scheme
@@ -21,8 +21,11 @@ Plugin 'reedes/vim-pencil'
 " Github plugin
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
+" Statusbar
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
-" Cool plugins to think about adding 
+" Cool plugins to think about adding
 " powerline or vim-airline
 " ctrlp, ack/ag
 
@@ -41,20 +44,28 @@ set backspace=indent,eol,start
 :let mapleader = ","
 
 " not sure if this does anything, but causes next line to be indented same as previous
-ret autoindent        
+ret autoindent
 
+"set t_Co=256
 " Set up color scheme
 set background=light
 colorscheme solarized
+
+" Airline Settings
+"let g:airline_theme='simple'
+"let g:airline_theme = 'base16_solarized'
+let g:airline_theme='solarized'
+"let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1
 
 " Use system clipboard
 set clipboard=unnamedplus
 
 " confim instead of error when leaving unsaved file
-set confirm 
+set confirm
 
 " Enable use of the mouse for all modes
-set mouse=a 
+set mouse=a
 
 " Allow hidden buffers, don't limit to 1 file per window/split
 set hidden
@@ -81,6 +92,8 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Start NERDTree by default
 autocmd VimEnter * NERDTree
+" Don't show pyc files
+let NERDTreeIgnore = ['\.pyc$']
 "let NERDTreeShowBookmarks=1
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 " It might be cool to have NERDTree open to the current file. Something like
@@ -127,10 +140,8 @@ function! Code(tab_width)
   " Show line numbers
   set number
 
-  " make a column at 81, 101 chars wide. Set color (else it's invisible awk)
-  set colorcolumn=81,101 
-  highlight ColorColumn ctermbg=8
-
+  " make a column at 81, 101 chars wide.
+  set colorcolumn=81,101
 
 endfunction
 
@@ -143,6 +154,9 @@ function! Filetypes()
   elseif &filetype == "text"
     call Prose()
   elseif &filetype == "nerdtree"
+  elseif &filetype == "make"
+    call Code(2)
+    set noexpandtab
   else
     call Code(2)
   endif

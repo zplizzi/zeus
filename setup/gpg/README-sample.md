@@ -9,5 +9,5 @@ Be careful when using these command-line commands, as writing unencrypted files 
 To encrypt a file with GNUPG, use:
 `gpg --output lastpass.gpg --symmetric input.txt`
 
-To encrypt a file with GNUPG, use:
+To decrypt a file with GNUPG, use:
 `gpg --output output.txt lastpass.gpg`
