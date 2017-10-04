@@ -40,7 +40,7 @@ set backspace=indent,eol,start
 ret autoindent        
 
 " Set up color scheme
-set background=dark
+set background=light
 colorscheme solarized
 
 " Use system clipboard
@@ -78,6 +78,8 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Start NERDTree by default
 autocmd VimEnter * NERDTree
 let NERDTreeShowBookmarks=1
+" Don't show pyc files
+let NERDTreeIgnore = ['\.pyc$']
 
 " Use soft-wrap by default with pencil
 let g:pencil#wrapModeDefault = 'soft'
@@ -131,6 +133,9 @@ function! Filetypes()
   elseif &filetype == "text"
     call Prose()
   elseif &filetype == "nerdtree"
+  elseif &filetype == "make"
+    call Code(2)
+    set noexpandtab
   else
     call Code(2)
   endif

@@ -93,6 +93,7 @@ source $ZSH/oh-my-zsh.sh
 #alias ga="git add"
 #alias gaa="git add -all"
 #alias gc="git commit"
+#alias gcmsg="git commit -m"
 #alias gca="git commit -a"
 #alias gcam="git commit -am"
 #alias gd="git diff"
