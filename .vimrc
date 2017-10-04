@@ -23,8 +23,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
 
 " Cool plugins to think about adding
-" powerline or vim-airline
 " ctrlp, ack/ag
+
+" Tried a statusbar plugin but didn't like. Font patching is annoying.
+" Also eats an extra line of text for not much gain.
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
