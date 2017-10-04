@@ -21,9 +21,6 @@ Plugin 'reedes/vim-pencil'
 " Github plugin
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
-" Statusbar
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
 " Cool plugins to think about adding
 " powerline or vim-airline
@@ -46,17 +43,9 @@ set backspace=indent,eol,start
 " not sure if this does anything, but causes next line to be indented same as previous
 ret autoindent
 
-"set t_Co=256
 " Set up color scheme
 set background=light
 colorscheme solarized
-
-" Airline Settings
-"let g:airline_theme='simple'
-"let g:airline_theme = 'base16_solarized'
-let g:airline_theme='solarized'
-"let g:airline_solarized_bg='dark'
-let g:airline_powerline_fonts = 1
 
 " Use system clipboard
 set clipboard=unnamedplus
