@@ -33,8 +33,8 @@ source $ZSH/oh-my-zsh.sh
 #alias gcb="git checkout -b"
 
 alias yolo="git commit -m 'no message specified'"
-alias yoloo="git commit -m 'no message specified' && git push origin master"
-alias yolooo="git add -A && git commit -m 'no message specified' && git push origin master"
+alias yoloo="git commit -m 'no message specified' && git push"
+alias yolooo="git add -A && git commit -m 'no message specified' && git push"
 
 export EDITOR="vim";
 
