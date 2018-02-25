@@ -94,6 +94,8 @@ nnoremap <Leader>f :NERDTreeToggle<Enter>
 let NERDTreeMinimalUI = 1
 " Hide after opening a file
 let NERDTreeQuitOnOpen = 1
+" Nerdtree ignore filetypes
+let NERDTreeIgnore = ['\.pyc$']
 
 " Use soft-wrap by default with pencil
 let g:pencil#wrapModeDefault = 'soft'
