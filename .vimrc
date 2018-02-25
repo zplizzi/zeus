@@ -12,7 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 "" User plugins
 " Show directory tree in left panel
 Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Nice color scheme
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'hynek/vim-python-pep8-indent'
