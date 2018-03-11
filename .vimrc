@@ -12,7 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 "" User plugins
 " Show directory tree in left panel
 Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Nice color scheme
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'hynek/vim-python-pep8-indent'
@@ -94,6 +94,8 @@ nnoremap <Leader>f :NERDTreeToggle<Enter>
 let NERDTreeMinimalUI = 1
 " Hide after opening a file
 let NERDTreeQuitOnOpen = 1
+" Nerdtree ignore filetypes
+let NERDTreeIgnore = ['\.pyc$']
 
 " Use soft-wrap by default with pencil
 let g:pencil#wrapModeDefault = 'soft'
