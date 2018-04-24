@@ -21,7 +21,8 @@ brew install \
   python3 \
   python \
   zsh \
-  gnupg
+  gnupg \
+  vim \
 
 
 # Set up a bunch of mac settings
