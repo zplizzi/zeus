@@ -46,7 +46,7 @@ set backspace=indent,eol,start
 ret autoindent
 
 " Set up color scheme
-set background=light
+set background=dark
 colorscheme solarized
 
 " Use system clipboard
