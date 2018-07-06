@@ -42,9 +42,9 @@ export EDITOR="vim";
 setopt RM_STAR_WAIT
 
 # activate virtual environment
-source virtualenvwrapper.sh
-export WORKON_HOME=~/venv
-workon 3 
+#source virtualenvwrapper.sh
+#export WORKON_HOME=~/venv
+#workon 3 
 
 # Don't share history between different instances
 unsetopt share_history
@@ -55,4 +55,11 @@ export TERM=xterm-256color
 # Fix TMUX issue where you can't deactivate the virtualenv
 # The problem is that TMUX imports env vars from the launching shell, and
 # then has a system to merge in session vars with the global vars.
-alias tmux="deactivate && tmux"
+#alias tmux="deactivate && tmux"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then  
+  eval "$(pyenv init -)"
+fi
+

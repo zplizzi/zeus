@@ -21,6 +21,10 @@ Plugin 'reedes/vim-pencil'
 " Github plugin
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
+" Add substitute command
+Plugin 'svermeulen/vim-easyclip'
+" Required for vim-easyclip
+Plugin 'tpope/vim-repeat'
 
 " Cool plugins to think about adding
 " ctrlp, ack/ag
@@ -52,6 +56,9 @@ colorscheme solarized
 " Use system clipboard
 "set clipboard=unnamedplus
 set clipboard=unnamed
+
+" Easyclip settings
+let g:EasyClipUseSubstituteDefaults = 1
 
 " confim instead of error when leaving unsaved file
 set confirm
