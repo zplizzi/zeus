@@ -1,3 +1,5 @@
+set -e
+
 # Install pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
@@ -17,6 +19,8 @@ pyenv install -s 3.6.6
 
 # Set the python version to use globally
 pyenv global 3.6.6
+
+which pip
 
 # Unclear if this works properly
 pip install -r ~/zeus/setup/requirements.txt
