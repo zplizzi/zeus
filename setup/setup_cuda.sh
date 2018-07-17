@@ -51,3 +51,9 @@ sudo apt-get install -y --no-install-recommends \
         libnccl-dev=$NCCL_VERSION-1+cuda9.0 \
         libcudnn7=$CUDNN_VERSION-1+cuda9.0 \
         libcudnn7-dev=$CUDNN_VERSION-1+cuda9.0
+
+
+# Install the NVIDIA graphics driver
+# Might need this (and an apt update)
+#sudo add-apt-repository ppa:graphics-drivers
+sudo apt install -y --no-install-recommends nvidia-387
