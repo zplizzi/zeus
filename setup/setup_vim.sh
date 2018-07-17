@@ -17,5 +17,5 @@ vim +PluginInstall +qall
 # Install GPG plugin by copying file to plugin dir. 
 # Need to update this file manually for new versions.
 mkdir -p ~/.vim/plugin
-cp gpg/gnupg.vim ~/.vim/plugin/gnupg.vim
+cp ~/zeus/setup/gpg/gnupg.vim ~/.vim/plugin/gnupg.vim
 # After this, it should "just work", for symmetric-key encrypted files at least.
