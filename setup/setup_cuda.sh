@@ -4,7 +4,7 @@ sudo apt-get update &&
 sudo apt-get install -y --no-install-recommends ca-certificates apt-transport-https gnupg-curl
 NVIDIA_GPGKEY_SUM=d1be581509378368edeec8c1eb2958702feedf3bc3d17011adbf24efacce4ab5
 NVIDIA_GPGKEY_FPR=ae09fe4bbd223a84b2ccfce3f60f4b3d7fa2af80
-apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+#apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
 #apt-key adv --export --no-emit-version -a $NVIDIA_GPGKEY_FPR | tail -n +5 > cudasign.pub
 #echo "$NVIDIA_GPGKEY_SUM  cudasign.pub" | sha256sum -c --strict -
 #rm cudasign.pub
@@ -13,8 +13,8 @@ echo "deb https://developer.download.nvidia.com/compute/machine-learning/repos/u
 
 CUDA_VERSION=9.0.176
 
-CUDA_PKG_VERSION=9-0=$CUDA_VERSION-1
-sudo apt-get install -y --no-install-recommends \
+CUDA_PKG_VERSION="9-0=$CUDA_VERSION-1"
+sudo apt-get install -y --force-yes --no-install-recommends \
         cuda-cudart-$CUDA_PKG_VERSION
 
 sudo ln -f -s cuda-9.0 /usr/local/cuda
@@ -38,7 +38,7 @@ echo "LIBRARY_PATH=/usr/local/cuda/lib64/stubs" >> ~/.zshrc
 CUDNN_VERSION=7.1.4.18
 NCCL_VERSION=2.2.12
 
-sudo apt-get install -y --no-install-recommends \
+sudo apt-get install -y --force-yes --no-install-recommends \
         cuda-libraries-$CUDA_PKG_VERSION \
         cuda-cublas-9-0=9.0.176.3-1 \
         libnccl2=$NCCL_VERSION-1+cuda9.0 \
@@ -56,4 +56,4 @@ sudo apt-get install -y --no-install-recommends \
 # Install the NVIDIA graphics driver
 # Might need this (and an apt update)
 #sudo add-apt-repository ppa:graphics-drivers
-sudo apt install -y --no-install-recommends nvidia-387
+#sudo apt install -y --no-install-recommends nvidia-387
