@@ -25,5 +25,5 @@ fi
 
 echo 'alias flame="~/software/FlameGraph/flamegraph.pl ~/temp/flame.txt > ~/temp/flame.svg"' >> ~/.zshrc
 
-echo 'alias flamee="flame && cd ~/temp %% python -m http.server"' >> ~/.zshrc
+echo 'alias flamee="flame && cd ~/temp && python -m http.server"' >> ~/.zshrc
 echo 'alias pyflame="sudo ~/software/pyflame/src/pyflame"' >> ~/.zshrc
