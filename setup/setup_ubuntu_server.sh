@@ -32,5 +32,6 @@ bash ~/zeus/setup/setup_vim.sh
 bash ~/zeus/setup/setup_zsh.sh
 #bash ~/zeus/setup/setup_venv.sh
 bash ~/zeus/setup/setup_pyenv.sh
+bash ~/zeus/setup/setup_jupyter.sh
 
 bash ~/zeus/setup/setup.sh
