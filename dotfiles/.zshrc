@@ -36,6 +36,8 @@ alias yolo="git commit -m 'no message specified'"
 alias yoloo="git commit -m 'no message specified' && git push"
 alias yolooo="git add -A && git commit -m 'no message specified' && git push"
 
+alias server="bash ~/zeus-private/servers/zack_cr_mosh.sh"
+
 export EDITOR="vim";
 
 # 10 second wait if you do something that will delete everything.

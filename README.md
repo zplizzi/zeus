@@ -3,6 +3,13 @@ My collection of dotfiles and other useful system scripts.
 
 This repository should be cloned into ~/zeus.
 
+Installation copy-pasta:
+```
+sudo apt install git
+git clone https://github.com/zplizzi/zeus.git
+bash zeus/setup/setup_ubuntu_server.sh
+```
+
 
 Things to be added into these scripts at some point:
 
