@@ -13,7 +13,7 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
   xz-utils tk-dev libffi-dev
 
 # Install desired python versions, skipping if already installed
-pyenv install -s 3.6.6
+pyenv install -s 3.6.4
 
 # Set the python version to use globally
-pyenv global 3.6.6
+pyenv global 3.6.4
