@@ -49,7 +49,7 @@ set backspace=indent,eol,start
 set showcmd
 
 " not sure if this does anything, but causes next line to be indented same as previous
-ret autoindent
+"ret autoindent
 
 " Set up color scheme
 set background=dark
