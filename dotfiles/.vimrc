@@ -25,6 +25,7 @@ Plugin 'tpope/vim-rhubarb'
 Plugin 'svermeulen/vim-easyclip'
 " Required for vim-easyclip
 Plugin 'tpope/vim-repeat'
+Plugin 'zplizzi/vipy'
 
 " Cool plugins to think about adding
 " ctrlp, ack/ag
@@ -41,10 +42,11 @@ filetype plugin indent on    " required, sets smart file-specific indenting sett
 set backspace=indent,eol,start
 
 " Use jk for esc
-:imap jk <Esc>
+:inoremap jk <Esc>
 
 " Use comma as leader
 :let mapleader = ","
+set showcmd
 
 " not sure if this does anything, but causes next line to be indented same as previous
 ret autoindent
@@ -72,8 +74,12 @@ set hidden
 " remember more than 8 commands of history
 set history=400
 
-" use \rr shortcut to source vimrc
-map <leader>rr :source ~/.vimrc<CR>
+" shortcut to source vimrc
+noremap <leader>sv :source ~/.vimrc<CR>
+" shortcut to edit vimrc
+noremap <leader>ev :vsplit ~/zeus/dotfiles/.vimrc<CR>
+noremap <leader>s :source %<CR>
+
 
 " shortcuts to edit vimrc/zshrc
 " currently broken because replaces vimrc in paths with this command
