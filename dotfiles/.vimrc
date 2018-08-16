@@ -26,6 +26,7 @@ Plugin 'svermeulen/vim-easyclip'
 " Required for vim-easyclip
 Plugin 'tpope/vim-repeat'
 Plugin 'zplizzi/vipy'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Cool plugins to think about adding
 " ctrlp, ack/ag
@@ -80,11 +81,14 @@ noremap <leader>sv :source ~/.vimrc<CR>
 noremap <leader>ev :vsplit ~/zeus/dotfiles/.vimrc<CR>
 noremap <leader>s :source %<CR>
 
+" ctrlp settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+" Set cwd to nerdtree root
+let g:NERDTreeChDirMode       = 2
+" Use cwd as ctrlp search path
+let g:ctrlp_working_path_mode = 'rw'
 
-" shortcuts to edit vimrc/zshrc
-" currently broken because replaces vimrc in paths with this command
-"ca vimrc :e ~/zeus/.vimrc
-"ca zshrc :e ~/zeus/.zshrc
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
