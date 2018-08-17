@@ -13,8 +13,8 @@ eval "$(pyenv init -)"
 
 # Python installation dependencies
 sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
-  libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-  xz-utils tk-dev libffi-dev
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev
 
 # Install desired python versions, skipping if already installed
 pyenv install -s 3.6.4
