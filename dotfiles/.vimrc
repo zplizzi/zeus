@@ -44,6 +44,9 @@ set backspace=indent,eol,start
 
 " Use jk for esc
 :inoremap jk <Esc>
+:inoremap Jk <Esc>
+:inoremap JK <Esc>
+:inoremap jK <Esc>
 
 " Use comma as leader
 :let mapleader = ","
