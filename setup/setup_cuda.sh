@@ -1,3 +1,5 @@
+
+
 set -e
 
 sudo apt-get update && 
@@ -57,3 +59,6 @@ sudo apt-get install -y --force-yes --no-install-recommends \
 # Might need this (and an apt update)
 #sudo add-apt-repository ppa:graphics-drivers
 #sudo apt install -y --no-install-recommends nvidia-387
+
+# See this path for an alterative to the non-nvidia ppa above
+# https://devtalk.nvidia.com/default/topic/1000340/cuda-setup-and-installation/-quot-nvidia-smi-has-failed-because-it-couldn-t-communicate-with-the-nvidia-driver-quot-ubuntu-16-04/4
