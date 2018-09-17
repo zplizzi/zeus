@@ -36,9 +36,6 @@ Plugin 'w0rp/ale'
 " Comments
 Plugin 'tpope/vim-commentary'
 
-
-
-
 " Cool plugins to think about adding
 " ctrlp, ack/ag
 
@@ -52,6 +49,13 @@ filetype plugin indent on    " required, sets smart file-specific indenting sett
 
 " Use <leader>c instead of gc for commenting
 map <leader>c gc
+
+" Set up ALE linters
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['yapf'],
+\}
+let g:ale_fix_on_save = 1
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
