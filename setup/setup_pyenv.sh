@@ -17,6 +17,8 @@ libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev libffi-dev liblzma-dev
 
 # Install desired python versions, skipping if already installed
+# Use this flag so that YouCompleteMe works
+export PYTHON_CONFIGURE_OPTS="--enable-shared"
 pyenv install -s 3.6.4
 
 # Set the python version to use globally
