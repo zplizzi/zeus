@@ -27,6 +27,7 @@ Plugin 'svermeulen/vim-easyclip'
 Plugin 'tpope/vim-repeat'
 Plugin 'zplizzi/vipy'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-commentary'
 
 " Cool plugins to think about adding
 " ctrlp, ack/ag
@@ -120,6 +121,10 @@ let NERDTreeIgnore = ['\.pyc$']
 
 " Use soft-wrap by default with pencil
 let g:pencil#wrapModeDefault = 'soft'
+
+" Use leader c as the prefix for comment instead of gc
+" So <leader>cl comments a line
+nmap <Leader>c gc
 
 " Set tab width properly
 function! TabWidth(width)
