@@ -56,6 +56,12 @@ let g:ale_fixers = {
 \   'python': ['yapf'],
 \}
 let g:ale_fix_on_save = 1
+let g:ale_python_mypy_options = "--ignore-missing-imports"
+let g:ale_sign_error = ">>"
+let g:ale_sign_warning = "ww"
+let g:ale_sign_info = "--"
+let g:ale_sign_style_error = "s>"
+let g:ale_sign_style_warning = "s-"
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
