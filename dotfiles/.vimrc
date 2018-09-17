@@ -25,8 +25,15 @@ Plugin 'tpope/vim-rhubarb'
 Plugin 'svermeulen/vim-easyclip'
 " Required for vim-easyclip
 Plugin 'tpope/vim-repeat'
+" My vim-ipython plugin
 Plugin 'zplizzi/vipy'
+" A fuzzy search plugin for navigating open buffers (among other things)
 Plugin 'ctrlpvim/ctrlp.vim'
+" Code completion
+Plugin 'Valloric/YouCompleteMe'
+" Linting
+Plugin 'w0rp/ale'
+" Comments
 Plugin 'tpope/vim-commentary'
 
 " Cool plugins to think about adding
@@ -39,6 +46,22 @@ Plugin 'tpope/vim-commentary'
 call vundle#end()            " required
 filetype plugin indent on    " required, sets smart file-specific indenting settings.
 " END Vundle
+
+" Use <leader>c instead of gc for commenting
+map <leader>c gc
+
+" Set up ALE linters
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['yapf'],
+\}
+let g:ale_fix_on_save = 1
+let g:ale_python_mypy_options = "--ignore-missing-imports"
+let g:ale_sign_error = ">>"
+let g:ale_sign_warning = "ww"
+let g:ale_sign_info = "--"
+let g:ale_sign_style_error = "s>"
+let g:ale_sign_style_warning = "s-"
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
@@ -121,10 +144,6 @@ let NERDTreeIgnore = ['\.pyc$']
 
 " Use soft-wrap by default with pencil
 let g:pencil#wrapModeDefault = 'soft'
-
-" Use leader c as the prefix for comment instead of gc
-" So <leader>cl comments a line
-nmap <Leader>c gc
 
 " Set tab width properly
 function! TabWidth(width)
