@@ -25,8 +25,19 @@ Plugin 'tpope/vim-rhubarb'
 Plugin 'svermeulen/vim-easyclip'
 " Required for vim-easyclip
 Plugin 'tpope/vim-repeat'
+" My vim-ipython plugin
 Plugin 'zplizzi/vipy'
+" A fuzzy search plugin for navigating open buffers (among other things)
 Plugin 'ctrlpvim/ctrlp.vim'
+" Code completion
+Plugin 'Valloric/YouCompleteMe'
+" Linting
+Plugin 'w0rp/ale'
+" Comments
+Plugin 'tpope/vim-commentary'
+
+
+
 
 " Cool plugins to think about adding
 " ctrlp, ack/ag
@@ -38,6 +49,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required, sets smart file-specific indenting settings.
 " END Vundle
+
+" Use <leader>c instead of gc for commenting
+map <leader>c gc
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
