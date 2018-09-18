@@ -53,8 +53,9 @@ map <leader>c gc
 " Set up ALE linters
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['yapf'],
 \}
+" Reformatting other people's code isn't ideal lol
+"\   'python': ['yapf'],
 let g:ale_fix_on_save = 1
 let g:ale_python_mypy_options = "--ignore-missing-imports"
 let g:ale_sign_error = ">>"
@@ -111,6 +112,7 @@ noremap <leader>s :source %<CR>
 " ctrlp settings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_mruf_relative = 1
 " Set cwd to nerdtree root
 let g:NERDTreeChDirMode       = 2
 " Use cwd as ctrlp search path
@@ -186,7 +188,7 @@ endfunction
 "" FILETYPE-SPECIFIC STUFF
 function! Filetypes()
   if &filetype == "python"
-    call Code(2)
+    call Code(4)
   elseif &filetype == "markdown"
     call Prose()
   elseif &filetype == "text"
