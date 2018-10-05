@@ -53,16 +53,17 @@ map <leader>c gc
 " Set up ALE linters
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['yapf'],
 \}
 " Reformatting other people's code isn't ideal lol
-"\   'python': ['yapf'],
-let g:ale_fix_on_save = 1
+"let g:ale_fix_on_save = 1
 let g:ale_python_mypy_options = "--ignore-missing-imports"
 let g:ale_sign_error = ">>"
 let g:ale_sign_warning = "ww"
 let g:ale_sign_info = "--"
 let g:ale_sign_style_error = "s>"
 let g:ale_sign_style_warning = "s-"
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
