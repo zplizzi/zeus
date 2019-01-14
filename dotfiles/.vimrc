@@ -47,6 +47,10 @@ call vundle#end()            " required
 filetype plugin indent on    " required, sets smart file-specific indenting settings.
 " END Vundle
 
+" Enable matchit for HTML/XML tag jumping with the % key
+" It's already bundled with VIM
+runtime macros/matchit.vim
+
 " Use <leader>c instead of gc for commenting
 map <leader>c gc
 
@@ -58,6 +62,7 @@ let g:ale_fixers = {
 " Reformatting other people's code isn't ideal lol
 "let g:ale_fix_on_save = 1
 let g:ale_python_mypy_options = "--ignore-missing-imports"
+let g:ale_python_pylint_options = "-d invalid-name"
 let g:ale_sign_error = ">>"
 let g:ale_sign_warning = "ww"
 let g:ale_sign_info = "--"
