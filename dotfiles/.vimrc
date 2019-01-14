@@ -62,6 +62,7 @@ let g:ale_sign_warning = "ww"
 let g:ale_sign_info = "--"
 let g:ale_sign_style_error = "s>"
 let g:ale_sign_style_warning = "s-"
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
