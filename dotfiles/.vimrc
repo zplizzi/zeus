@@ -59,8 +59,7 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['yapf'],
 \}
-" Reformatting other people's code isn't ideal lol
-"let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_python_mypy_options = "--ignore-missing-imports"
 let g:ale_python_pylint_options = "-d invalid-name"
 let g:ale_sign_error = ">>"
@@ -87,7 +86,7 @@ set showcmd
 "ret autoindent
 
 " Set up color scheme
-set background=dark
+set background=light
 colorscheme solarized
 
 " Use system clipboard
