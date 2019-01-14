@@ -53,10 +53,9 @@ map <leader>c gc
 " Set up ALE linters
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['yapf'],
 \}
-" Reformatting other people's code isn't ideal lol
-"\   'python': ['yapf'],
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_python_mypy_options = "--ignore-missing-imports"
 let g:ale_sign_error = ">>"
 let g:ale_sign_warning = "ww"
@@ -81,7 +80,7 @@ set showcmd
 "ret autoindent
 
 " Set up color scheme
-set background=dark
+set background=light
 colorscheme solarized
 
 " Use system clipboard
