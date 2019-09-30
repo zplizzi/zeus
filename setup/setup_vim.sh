@@ -2,9 +2,14 @@
 # Set to quit on errors
 set -e
 
+# Need to install vim 8, doesn't come default on 16.04
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt update
+sudo apt install -y vim
+
 # For ALE to work
 sudo apt install -y cmake
-pip install yapf flake8 mypy
+pip3 install yapf flake8 mypy
 
 # install vundle
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then

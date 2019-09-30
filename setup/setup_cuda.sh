@@ -1,4 +1,8 @@
-
+# Update: don't use this!
+# Turns out pytorch ships with cuda and cudnn included. So only the drivers are necessary.
+# Probably easiest to install them from PPA.
+# Use this guide:
+# https://askubuntu.com/questions/1077061/how-do-i-install-nvidia-and-cuda-drivers-into-ubuntu/1077063#1077063
 
 set -e
 

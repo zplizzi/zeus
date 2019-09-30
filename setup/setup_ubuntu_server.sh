@@ -14,6 +14,7 @@ sudo apt-get -y install \
   git \
   python \
   python-pip \
+  python3-pip \
   build-essential \
   python-dev \
   python3-dev \
@@ -28,10 +29,12 @@ sudo apt-get -y install \
   
 
 # Run general setup files 
+bash ~/zeus/setup/setup.sh
+
 bash ~/zeus/setup/setup_vim.sh
 bash ~/zeus/setup/setup_zsh.sh
 #bash ~/zeus/setup/setup_venv.sh
 bash ~/zeus/setup/setup_pyenv.sh
 bash ~/zeus/setup/setup_jupyter.sh
 
-bash ~/zeus/setup/setup.sh
+echo "Setup finished. Run 'zsh' to enter the zsh prompt"

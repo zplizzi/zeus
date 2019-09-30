@@ -32,7 +32,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Code completion
 Plugin 'Valloric/YouCompleteMe'
 " Linting
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 " Comments
 Plugin 'tpope/vim-commentary'
 
