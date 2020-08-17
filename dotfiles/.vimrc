@@ -60,8 +60,9 @@ let g:ale_fixers = {
 \   'python': ['yapf'],
 \}
 let g:ale_fix_on_save = 0
-let g:ale_python_mypy_options = "--ignore-missing-imports"
+let g:ale_python_mypy_options = "--ignore-missing-imports --allow_redefinition --no_strict_optional"
 let g:ale_python_pylint_options = "-d invalid-name"
+let g:ale_python_flake8_options = '--ignore=E501'
 let g:ale_sign_error = ">>"
 let g:ale_sign_warning = "ww"
 let g:ale_sign_info = "--"
