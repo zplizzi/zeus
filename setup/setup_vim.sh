@@ -23,8 +23,9 @@ echo "Installing vim plugins. Will throw an error, don't be alarmed, just hit EN
 vim +PluginInstall +qall
 
 # Build YouCompleteMe
-cd ~/.vim/bundle/YouCompleteMe
-./install.py
+# Throwing some cmake error, just gonna skip it
+# cd ~/.vim/bundle/YouCompleteMe
+# ./install.py
 
 # Install GPG plugin by copying file to plugin dir. 
 # Need to update this file manually for new versions.

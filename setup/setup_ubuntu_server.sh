@@ -1,4 +1,4 @@
-# Sets up an Ubuntu system how I like it
+# Sets up an Ubuntu 18.04 LTS system how I like it
 
 # Set to quit on errors
 set -e
