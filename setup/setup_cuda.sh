@@ -3,6 +3,9 @@
 # Probably easiest to install them from PPA.
 # Use this guide:
 # https://askubuntu.com/questions/1077061/how-do-i-install-nvidia-and-cuda-drivers-into-ubuntu/1077063#1077063
+# Currently just "sudo apt install nvidia-driver-460"
+# Then reboot the system, install torch (check the torch website for the right command),
+# and nvidia-smi should just work.
 
 set -e
 
