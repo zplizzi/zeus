@@ -35,6 +35,12 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'w0rp/ale'
 " Comments
 Plugin 'tpope/vim-commentary'
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'ferrine/md-img-paste.vim'
+
+" Plugin 'untitled-ai/jupyter_ascending.vim'
 
 " Cool plugins to think about adding
 " ctrlp, ack/ag
@@ -165,7 +171,8 @@ function! Prose()
   " use pencil for soft line wrapping
   call pencil#init()
   " add a bit of left padding
-  set foldcolumn=1
+  " set foldcolumn=1
+  " highlight FoldColumn guifg=bg guibg=bg
 endfunction
 
 " function for switching to code mode
@@ -191,6 +198,8 @@ function! Filetypes()
     call Code(4)
   elseif &filetype == "markdown"
     call Prose()
+    set nofoldenable
+    set foldcolumn=0
   elseif &filetype == "text"
     call Prose()
   elseif &filetype == "nerdtree"
@@ -209,3 +218,18 @@ autocmd FileType * call Filetypes()
 " - Have nerdtree open to current file + become active pane by keystroke
 "     Will use less screen real estate!!
 " - follow this: https://medium.com/@victormours/a-better-nerdtree-setup-3d3921abc0b9
+
+" Enable or disable Latex support
+let g:vim_markdown_math = 0
+"let g:vim_markdown_math = 1
+" Concel Latex (if enabled above)
+"let g:tex_conceal = ""
+
+
+" Stuff for md-img-paste
+autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+let g:mdip_imgdir = 'img2'
+let g:mdip_imgname = 'image2'
+
+" Fix nerdtree showing ^G for an unclear reason
+let g:NERDTreeNodeDelimiter = "\u00a0"
