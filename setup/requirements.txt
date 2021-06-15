@@ -1,11 +1,11 @@
 # Packages to install with pip into new virtual environments
 # Not specifying version numbers since I prefer having the most updated packages
-Django
-Flask
+# Django
+# Flask
 ipython
 jupyter
 # matplotlib is super slow to install 
-# matplotlib
+matplotlib
 numpy
-virtualenvwrapper
-protobuf
+# virtualenvwrapper
+# protobuf
