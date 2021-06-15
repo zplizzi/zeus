@@ -2,7 +2,7 @@
 # Not specifying version numbers since I prefer having the most updated packages
 # Django
 # Flask
-ipython
+# ipython
 jupyter
 # matplotlib is super slow to install 
 matplotlib
