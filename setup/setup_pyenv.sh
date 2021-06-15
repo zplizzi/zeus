@@ -19,9 +19,9 @@ xz-utils tk-dev libffi-dev liblzma-dev
 # Install desired python versions, skipping if already installed
 # Use this flag so that YouCompleteMe works
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
-pyenv install -s 3.6.4
+pyenv install -s 3.9.2
 
 # Set the python version to use globally
-pyenv global 3.6.4
+pyenv global 3.9.2
 
 pip install -r ~/zeus/setup/requirements.txt
