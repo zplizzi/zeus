@@ -1,12 +1,5 @@
 # My general .bashrc file. Only include things here that should work on all Unix-like systems.
 
-# set up virtualenvwrapper path
-export WORKON_HOME=~/venv
-
-source virtualenvwrapper.sh
-
-# activate virtual environment
-workon 3
 
 #### RANDOM FUNCTIONS #####
 # awesome!  CD AND LA. I never use 'cd' anymore...
@@ -46,6 +39,6 @@ export PS1="${venv}${PURPLE} \w$ ${NIL}"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then  
-  eval "$(pyenv init -)"
+  eval "$(pyenv init --path)"
 fi
 

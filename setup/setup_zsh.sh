@@ -1,3 +1,6 @@
+# Note: On GCP this was throwing errors because there's no password and chsh
+# doesn't like that. Just adding $(which zsh) to the end of .profile worked
+# instead.
 
 # Set to quit on errors
 set -e
