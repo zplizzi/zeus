@@ -239,3 +239,8 @@ let g:mdip_imgname = 'image2'
 
 " Fix nerdtree showing ^G for an unclear reason
 let g:NERDTreeNodeDelimiter = "\u00a0"
+
+" Use case insensitive search by default
+set ignorecase
+" If the search string contains a capital, then use case sensitive search
+set smartcase
